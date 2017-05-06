@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class ="jumbotron">
+  <h2>Yelpdemo is the best way to find reviews on local restaurants.</h2>
+  <h3>Explore the favorite diners, pastry shops, and eateries in your community.
+  <br>Leave reviews and ratings for your fellow foodies.</h3>
+</div>
+
+<h1>Restaurants</h1>
+
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.phone %></td>
+        <td><%= restaurant.website %></td>
+        <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>
