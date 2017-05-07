@@ -34,7 +34,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Add files (images)
+gem 'carrierwave'
+
+
 gem 'rails_12factor', group: :production
+# Database for Heroku
 gem 'pg', group: :production
 
 group :development, :test do
